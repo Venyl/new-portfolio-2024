@@ -1,0 +1,32 @@
+.title {
+    padding: 20px 0;
+    border-top: 1px solid $color-brown;
+    border-bottom: 1px solid $color-brown;
+    width: 100%;
+    white-space: nowrap;
+    margin: 40px 0;
+    letter-spacing: 10px;
+    overflow: hidden;
+    font-size: 18px;
+
+    @include md-min {
+        font-size: 25px;
+        margin: 60px 0;
+    }
+}
+
+.fa-burst {
+    padding: 0 7px;
+    color: $color-brown;
+}
+
+
+@keyframes move-words {
+    0% {
+        left: 100%;
+    }
+
+    100% {
+        left: -100%;
+    }
+}

@@ -1,0 +1,176 @@
+@import "./basic";
+@import "./mixins";
+@import "./variables";
+
+.menu {
+    position: sticky;
+    top: 0;
+    background-color: $color-main;
+    width: 100%;
+    padding: 20px;
+    border-bottom: 2px solid $color-bg;
+    z-index: 11111;
+    transition: height 0.5s ease-out;
+
+    @include sm-min {
+        padding: 20px 40px;
+    }
+}
+
+.menu__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.fa-bars,
+.fa-linkedin-in,
+.fa-instagram,
+.fa-github {
+    background-color: transparent;
+    color: $color-bg;
+    width: 20px;
+    height: 15px;
+
+    @include md-min {
+        padding: 0 10px;
+    }
+
+    @include md-min {
+        width: 30px;
+        height: 20px;
+    }
+
+    path {
+        color: $color-bg;
+    }
+}
+
+
+.menu__link--social:nth-of-type(2) {
+    @include md-max {
+        padding: 0 10px;
+    }
+}
+
+.menu__emotji {
+    font-size: 20px;
+
+    @include md-min {
+        font-size: 25px;
+    }
+}
+
+
+.fa-xmark,
+.fa-bars {
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+    color: $color-bg;
+    padding: 0;
+
+    @include md-min {
+        height: 30px;
+        width: 30px;
+    }
+}
+
+.fa-xmark {
+    color: $color-brown;
+
+}
+
+.menu__logo {
+    width: 20px;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transform: translateY(-50%);
+}
+
+.menu__link--social {
+
+    &:hover {
+        svg {
+            color: $color-brown;
+        }
+    }
+}
+
+.menu-toopen {
+    background-color: $color-main;
+    height: 15vh;
+    width: 100%;
+    position: sticky;
+    height: 0;
+    transition: height 0.5s ease-out;
+    opacity: 0;
+
+
+    &.open {
+        opacity: 1;
+        height: 15vh;
+        z-index: 5555;
+
+        @include xs-max {
+            height: 25vh;
+        }
+    }
+
+
+}
+
+.menu-open__list {
+    display: flex;
+    z-index: 222;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+
+    @include sm-min {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 0 40px;
+    }
+
+    @include md-min {
+        width: 60%;
+
+    }
+}
+
+
+.menu-open__link {
+    color: $color-bg;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    padding: 5px;
+    text-decoration: none;
+
+    &:hover {
+        color: $color-brown;
+    }
+}
+
+.menu-open__li {
+    margin: 10px 0;
+}
+
+.menu__burger {
+    &:hover {
+        .fa-bars {
+            color: $color-brown;
+        }
+    }
+}

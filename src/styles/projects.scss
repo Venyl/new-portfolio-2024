@@ -1,0 +1,123 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+
+.projects__project {
+    @include content-width();
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 40px auto;
+    gap: 30px;
+
+    @include md-min {
+        flex-direction: row;
+        margin: 150px auto;
+        gap: 150px;
+    }
+}
+
+.project__container {
+    position: relative;
+    background-color: $color-gray-dark;
+    width: 100%;
+    height: 300px;
+
+    @include md-min {
+        transform: rotate(18deg);
+        height: 300px;
+    }
+}
+
+.project__img {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.project__mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $color-gray-dark;
+    opacity: 0.8;
+}
+
+.projects__col {
+    width: 100%;
+
+    @include md-min {
+        width: 50%;
+    }
+}
+
+.project__title--text {
+    padding: 10px 0;
+}
+
+.project__title {
+    font-size: 30px;
+    font-family: "Londrina Outline", sans-serif;
+    letter-spacing: 12px;
+    color: #6C5F5B;
+
+    @include md-min {
+        font-size: 40px;
+    }
+
+}
+
+.project__subtitle {
+    text-decoration: line-through;
+}
+
+.fa-link,
+.fa-code {
+    padding-right: 5px;
+    height: 10px;
+    width: 15px;
+}
+
+.project__links {
+    display: flex;
+}
+
+.project__link--github {
+    padding-left: 10px;
+}
+
+.project__link {
+    border-style: double;
+    width: auto;
+    display: block;
+    cursor: pointer;
+    padding-right: 20px;
+}
+
+.project__link--github {
+    cursor: pointer;
+}
+
+.project__title--text {
+    @include md-min {
+        margin: 15px 0;
+    }
+}
+
+.project__link {
+    text-decoration: none;
+    color: $color-brown;
+}
+
+.project__tech {
+    margin: 15px 0;
+    font-style: italic;
+}
